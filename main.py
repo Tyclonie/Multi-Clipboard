@@ -63,11 +63,11 @@ class App(ClipBoard):
                     self.set_value(0, data)
 
     def enter_value(self, index):
-        value = self.get_value(index)
-        if value is not None:
+        if self.get_value(index) is not None:
             keyboard.press("backspace")
-            keyboard.write(value)
+            keyboard.write(self.get_value(index))
             time.sleep(0.3)
+
 
 if __name__ == "__main__":
     App()
